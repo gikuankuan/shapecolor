@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a
+      href="https://summer10920.github.io/2020/04-20/js-baseclass-2/"
+      id="alink"
+      title="teacher"
+      >我是超連結</a
+    >
+    <hr />
+
+    <input type="button" value="我是按鈕" onclick="alert('aaa')" id="abtn" />
+
+    <script>
+      let nodeA = document.getElementById("alink");
+      let nodeB = document.getElementById("abtn");
+
+      nodeA.attributes[0];
+      nodeA.attributes[0].name;
+      nodeA.attributes[0].value;
+      nodeA.attributes[0].value = "https://sweetalert2.github.io/";
+      nodeB.attributes;
+      nodeB.attributes.onclick;
+      nodeB.attributes.onclick.value;
+      nodeB.attributes.onclick.value = "alert('BBB')";
+
+      nodeA.setAttribute("target", "_blank");
+      nodeB.setAttribute("class", "clr");
+      nodeB.removeAttribute("class", "clr");
+    
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="demo" >點這邊</p>
+    <button onclick="add()">點點點</button>
+    <script>
+             function add(){
+                 let btn=document.createElement("button"); //創造
+                 btn.textContent="AAA"; //指定生成
+                 document.body.appendChild(btn); //找地方放
+             }
+
+            //  document.getElementById("demo").onclick = add;
+            //  document.getElementById("demo").onclick = add(); //有括號代表直接執行
+            // document.getElementById("demo").setAttribute("onclick","add()")
+            // document.getElementById("demo").onclick=function(){
+            //     add();
+            // };
+            document.body.lastChild.remove(); //刪除最後的節點
+
+    </script>
+  </body>
+</html>

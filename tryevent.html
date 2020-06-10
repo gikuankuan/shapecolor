@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>事件</title>
+  </head>
+  <body>
+    <input
+      type="button"
+      value="onclick demo"
+      onclick="showmsg('這是透過html生成的')"
+    />
+    <hr />
+    <input type="button" value="onclick" onclick="whatis(this)" />
+    <hr />
+    <input type="button" value="onmousedown" onmousedown="whatis(this)" />
+    <hr />
+    <input type="button" value="onmouseup" onmouseup="whatis(this)" />
+    <hr />
+    <input type="button" value="onmouseover" onmouseover="whatis(this)" />
+    <hr />
+    <input type="button" value="onmouseout" onmouseout="whatis(this)" />
+    <hr />
+
+    <input type="text" value="onchange" onchange="whatis(this)" />
+    <hr />
+    <input type="text" value="onblur" onblur="whatis(this)" />
+    <hr />
+    <input type="text" value="onfocus" onfocus="whatis(this)" />
+    <hr /><div id="fakeBtn"></div><hr>
+    
+
+    <div>你的鍵盤號碼為：<span id="keycode"></span></div>
+    <script>
+      function showmsg(txt) {
+        console.log(txt);
+      }
+
+      function whatis(e) {
+        console.log(e.value);
+        if (e.style.color == "red") {
+          e.style = "font-size:2rem;";
+        } else {
+          e.style.fontsize = "2rem";
+          e.style.fontcolor = "red";
+        }
+        console.log(`你剛剛按下了${e.value}`);
+      }
+
+      function getcode() {
+        console.log(event.keyCode);
+        document.getElementById("keycode").textContent = event.keyCode;
+      }
+      document.onkeydown = getcode;
+    </script>
+  </body>
+</html>

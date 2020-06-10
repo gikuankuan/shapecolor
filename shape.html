@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test</title>
+  </head>
+  <body>
+    <div
+      id="a"
+      style="width: 100px; height: 100px; background-color: red;"
+    ></div>
+    <hr />
+    <button onclick="addA()">正方形</button>
+    <button onclick="addB()">圓形</button>
+    <button onclick="addC()">三角形</button>
+    <hr>
+    <p>請輸入顏色色號</p>
+    <input value="#123" onchange="color(this)" />
+
+    <script>
+
+        let col = "red";
+        
+      function addA() {
+        let A = document.getElementById("a"); //創造
+        A.style = `width: 100px; height: 100px; background-color: ${col};`; //指定生成
+      }
+      function addB() {
+        let A = document.getElementById("a"); //創造
+        A.style =
+          `width: 100px; height: 100px; background-color: ${col};border-radius: 50px;`; //指定生成
+      }
+      function addC() {
+        let A = document.getElementById("a"); //創造
+        A.style =
+          `width: 0px; height: 0px; border-left:50px solid transparent; border-right:50px solid transparent; border-bottom:100px solid ${col};`; //指定生成
+      }
+      // -----
+      function color(e) {
+        col = `${e.value}`;
+        console.log(e.value);
+        let A = document.getElementById("a"); //找到
+        if(document.getElementById("a").style.borderBottom == ""){
+        A.style.background = e.value;  //改顏色
+        }else{
+        // A.style.borderBottom =`100px solid ${e.value}`;
+        A.style.borderBottom ="100px solid "+e.value;
+        }
+
+      }
+
+    </script>
+  </body>
+</html>
